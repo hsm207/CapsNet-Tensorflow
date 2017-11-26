@@ -7,6 +7,7 @@ from config import cfg
 
 
 def load_mnist(path, is_training):
+    # the mnist dataset can be downloaded from http://yann.lecun.com/exdb/mnist/
     fd = open(os.path.join(cfg.dataset, 'train-images-idx3-ubyte'))
     loaded = np.fromfile(file=fd, dtype=np.uint8)
     trX = loaded[16:].reshape((60000, 28, 28, 1)).astype(np.float)
